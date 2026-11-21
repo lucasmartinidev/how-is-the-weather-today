@@ -1,12 +1,12 @@
-Implemente um painel de clima no frontend e backend existente.
+Implement a weather dashboard all in English within your existing frontend and backend.
 
-O usuário deve poder digitar uma cidade e ver o clima atual.
+Users should be able to enter a city name and view the current weather.
 
-Para obter os dados, utilize a API Open-Meteo (gratuita, sem necessidade de API key):
+Use the Open-Meteo API to retrieve data (it is free and does not require an API key):
 
-- Geocoding API: https://geocoding-api.open-meteo.com/v1/search (converter cidade em coordenadas)
-- Weather API: https://api.open-meteo.com/v1/forecast (obter dados do clima)
+- Geocoding API: https://geocoding-api.open-meteo.com/v1/search (to convert a city name into coordinates)
+- Weather API: https://api.open-meteo.com/v1/forecast (to fetch weather data)
 
-O frontend deve buscar os dados somente do backend. Opcionalmente, o frontend pode tentar obter a localização do usuário pelo navegador (geolocation) e sugerir a cidade automaticamente. 
+The frontend must fetch data exclusively from the backend. Optionally, the frontend can attempt to detect the user's location via the browser (geolocation) and automatically suggest a city.
 
-Crie um endpoint no backend para o frontend consumir e exiba os dados no painel.
+Create an endpoint on the backend for the frontend to consume, and display the retrieved data on the dashboard.
