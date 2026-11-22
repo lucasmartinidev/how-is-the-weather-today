@@ -40,11 +40,35 @@ describe('weather dashboard', () => {
     expect(mockFetchWeather).toHaveBeenCalledWith('London', expect.any(AbortSignal));
   });
 
+  it('changes the scene attributes with the returned condition, temperature, and day phase', async () => {
+    mockFetchWeather.mockResolvedValueOnce(report).mockResolvedValueOnce({
+      ...report,
+      current: { ...report.current, time: '2026-05-12T22:00', temperature: 33, isDay: false, weatherCode: 95 },
+    });
+    render(<WeatherDashboard />);
+    const search = screen.getByRole('searchbox', { name: 'Find your city' });
+    const world = document.querySelector('.weather-world');
+    fireEvent.change(search, { target: { value: 'London' } });
+    fireEvent.click(screen.getByRole('button', { name: 'Search weather' }));
+    await screen.findByRole('heading', { name: 'London' });
+    expect(world?.getAttribute('data-weather')).toBe('cloud');
+    expect(world?.getAttribute('data-temperature')).toBe('mild');
+    expect(world?.getAttribute('data-light')).toBe('day');
+    fireEvent.change(search, { target: { value: 'Tokyo' } });
+    fireEvent.click(screen.getByRole('button', { name: 'Search weather' }));
+    await waitFor(() => expect(world?.getAttribute('data-weather')).toBe('storm'));
+    expect(world?.getAttribute('data-temperature')).toBe('hot');
+    expect(world?.getAttribute('data-light')).toBe('night');
+  });
+
   it('announces a failed search and supports suggested city buttons', async () => {
     mockFetchWeather.mockRejectedValueOnce(new Error('City not found.'));
     render(<WeatherDashboard />);
+    const search = screen.getByRole('searchbox', { name: 'Find your city' });
     fireEvent.click(screen.getByRole('button', { name: 'Tokyo' }));
     expect((await screen.findByRole('alert')).textContent).toContain('City not found.');
+    expect(search.getAttribute('aria-invalid')).toBe('true');
+    expect(search.getAttribute('aria-describedby')).toBe('city-search-error');
     await waitFor(() => expect(mockFetchWeather).toHaveBeenCalledWith('Tokyo', expect.any(AbortSignal)));
   });
 });

@@ -10,3 +10,6 @@ Use the Open-Meteo API to retrieve data (it is free and does not require an API 
 The frontend must fetch data exclusively from the backend. Optionally, the frontend can attempt to detect the user's location via the browser (geolocation) and automatically suggest a city.
 
 Create an endpoint on the backend for the frontend to consume, and display the retrieved data on the dashboard.
+
+# prommt with impeccable skill
+/impeccable I would like a futuristic design for my weather forecast application, featuring an eye-catching, innovative background and high-contrast colors that reflect the temperature and weather conditions specific to each city.

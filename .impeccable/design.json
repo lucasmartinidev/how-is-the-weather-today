@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-21T19:27:11Z",
+  "title": "Design System: How Is The Weather Today?",
+  "extensions": {
+    "colorMeta": {
+      "page-ground": { "role": "neutral", "displayName": "Chart Ground" },
+      "deep-navy": { "role": "neutral", "displayName": "Deep Chart Navy" },
+      "scene-default-mid": { "role": "neutral", "displayName": "Default Scene Midtone" },
+      "scene-day-deep": { "role": "neutral", "displayName": "Day Scene Deep" },
+      "scene-day-mid": { "role": "neutral", "displayName": "Day Scene Midtone" },
+      "scene-night-deep": { "role": "neutral", "displayName": "Night Scene Deep" },
+      "scene-night-mid": { "role": "neutral", "displayName": "Night Scene Midtone" },
+      "copy-main": { "role": "neutral", "displayName": "Chalk Copy" },
+      "copy-muted": { "role": "neutral", "displayName": "Muted Blue-Gray Copy" },
+      "divider": { "role": "neutral", "displayName": "Fine Divider" },
+      "condition-clear": { "role": "primary", "displayName": "Clear Condition Accent" },
+      "condition-cloud": { "role": "primary", "displayName": "Cloud Condition Accent" },
+      "condition-fog": { "role": "primary", "displayName": "Fog Condition Accent" },
+      "condition-rain": { "role": "primary", "displayName": "Rain Condition Accent" },
+      "condition-snow": { "role": "primary", "displayName": "Snow Condition Accent" },
+      "condition-storm": { "role": "primary", "displayName": "Storm Condition Accent" },
+      "condition-variable": { "role": "primary", "displayName": "Variable Condition Accent" },
+      "condition-wash-clear": { "role": "primary", "displayName": "Clear Condition Wash" },
+      "condition-wash-cloud": { "role": "primary", "displayName": "Cloud Condition Wash" },
+      "condition-wash-fog": { "role": "primary", "displayName": "Fog Condition Wash" },
+      "condition-wash-rain": { "role": "primary", "displayName": "Rain Condition Wash" },
+      "condition-wash-snow": { "role": "primary", "displayName": "Snow Condition Wash" },
+      "condition-wash-storm": { "role": "primary", "displayName": "Storm Condition Wash" },
+      "condition-wash-variable": { "role": "primary", "displayName": "Variable Condition Wash" },
+      "thermal-freezing": { "role": "secondary", "displayName": "Freezing Thermal Accent" },
+      "thermal-cold": { "role": "secondary", "displayName": "Cold Thermal Accent" },
+      "thermal-mild": { "role": "secondary", "displayName": "Mild Thermal Accent" },
+      "thermal-warm": { "role": "secondary", "displayName": "Warm Thermal Accent" },
+      "thermal-hot": { "role": "secondary", "displayName": "Hot Thermal Accent" },
+      "thermal-wash-freezing": { "role": "secondary", "displayName": "Freezing Thermal Wash" },
+      "thermal-wash-cold": { "role": "secondary", "displayName": "Cold Thermal Wash" },
+      "thermal-wash-mild": { "role": "secondary", "displayName": "Mild Thermal Wash" },
+      "thermal-wash-warm": { "role": "secondary", "displayName": "Warm Thermal Wash" },
+      "thermal-wash-hot": { "role": "secondary", "displayName": "Hot Thermal Wash" },
+      "status-online": { "role": "tertiary", "displayName": "Service Online" },
+      "status-offline": { "role": "tertiary", "displayName": "Service Offline" },
+      "error-copy": { "role": "tertiary", "displayName": "Search Error Copy" },
+      "placeholder-copy": { "role": "neutral", "displayName": "Search Placeholder" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Editorial Display", "purpose": "Responsive dashboard heading." },
+      "title": { "displayName": "City Title", "purpose": "Current city and empty-state heading." },
+      "body": { "displayName": "System UI", "purpose": "Controls and supporting interface copy." },
+      "data": { "displayName": "Measured Data", "purpose": "Temperature, coordinates, timestamps, and metric values." },
+      "label": { "displayName": "Instrument Label", "purpose": "Compact search, status, and metric labels." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "weather-accent-transition", "value": "800ms ease", "purpose": "Transitions condition and thermal accent colors." },
+      { "name": "weather-wash-transition", "value": "900ms ease", "purpose": "Transitions condition and thermal washes and day/night scene colors." },
+      { "name": "atmosphere-opacity", "value": "700ms ease", "purpose": "Fades the broad atmospheric overlay." },
+      { "name": "field-interaction", "value": "180ms ease", "purpose": "Transitions search-field border and fill on focus." },
+      { "name": "control-interaction", "value": "160ms ease", "purpose": "Transitions search action and suggestion hover states." },
+      { "name": "atlas-orbit", "value": "34s linear infinite", "purpose": "Slowly rotates the abstract outer ellipse; reduced-motion preferences shorten it." }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "680px" },
+      { "name": "compact", "value": "365px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Search Action",
+      "kind": "button",
+      "refersTo": "search-action",
+      "description": "Condition-accented city search action with hover, focus, disabled, and narrow-screen states.",
+      "html": "<button class=\"ds-search-action\" type=\"button\"><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><path d=\"m21 21-4.35-4.35\"/></svg><span>Search weather</span></button>",
+      "css": ".ds-search-action{display:inline-flex;min-height:44px;align-items:center;justify-content:center;gap:9px;padding:0 17px;border:0;border-radius:8px;color:#071629;background:#c6d3ed;cursor:pointer;font-size:13px;font-weight:700;transition:filter 160ms ease,transform 160ms ease}.ds-search-action svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.ds-search-action:hover:not(:disabled){filter:brightness(1.08);transform:translateY(-1px)}.ds-search-action:focus-visible{outline:3px solid #f4cd7a;outline-offset:3px}.ds-search-action:disabled{cursor:not-allowed;opacity:.54}@media(max-width:680px){.ds-search-action{width:44px;padding:0}.ds-search-action span{position:absolute;overflow:hidden;width:1px;height:1px;clip:rect(0 0 0 0);white-space:nowrap}}"
+    },
+    {
+      "name": "City Search Field",
+      "kind": "input",
+      "refersTo": "search-field",
+      "description": "Dark translucent city field with a thermal focus treatment.",
+      "html": "<div class=\"ds-search-control\"><label class=\"ds-search-label\" for=\"ds-city\">Find your city</label><div class=\"ds-search-field\"><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\"><path d=\"M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z\"/><circle cx=\"12\" cy=\"10\" r=\"3\"/></svg><input id=\"ds-city\" type=\"search\" placeholder=\"Enter a city, e.g. San Francisco\"/></div></div>",
+      "css": ".ds-search-control{--copy-main:#f2f7fc;--copy-muted:#b7c8d8;--thermal-color:#f4cd7a;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif}.ds-search-label{display:block;margin-bottom:7px;color:var(--copy-muted);font-family:\"Azeret Mono\",ui-monospace,monospace;font-size:11px;font-weight:600;letter-spacing:.025em}.ds-search-field{display:flex;min-height:56px;align-items:center;gap:14px;padding:7px 8px 7px 16px;border:1px solid rgb(207 226 242 / 20%);border-radius:12px;background:rgb(5 16 30 / 58%);transition:border-color 180ms ease,background-color 180ms ease}.ds-search-field:focus-within{border-color:var(--thermal-color);background:rgb(5 16 30 / 82%)}.ds-search-field svg{width:18px;height:18px;flex:none;fill:none;stroke:#c6d3ed;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.ds-search-field input{width:100%;min-width:0;border:0;outline:0;color:var(--copy-main);background:transparent;font:14px ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif}.ds-search-field input::placeholder{color:#9fb1c3;opacity:1}.ds-search-field input:focus-visible{outline:0}"
+    },
+    {
+      "name": "Suggested City Chip",
+      "kind": "chip",
+      "refersTo": "city-suggestion",
+      "description": "A compact city choice with a restrained condition-colored hover state.",
+      "html": "<button class=\"ds-city-chip\" type=\"button\">New York</button>",
+      "css": ".ds-city-chip{min-height:29px;padding:4px 11px;border:1px solid rgb(207 226 242 / 20%);border-radius:7px;color:#f2f7fc;background:transparent;cursor:pointer;font:12px ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif;transition:color 160ms ease,border-color 160ms ease,background-color 160ms ease}.ds-city-chip:hover{border-color:#c6d3ed;color:#c6d3ed;background:rgb(255 255 255 / 4%)}.ds-city-chip:focus-visible{outline:3px solid #f4cd7a;outline-offset:3px}"
+    },
+    {
+      "name": "Suggested Cities",
+      "kind": "nav",
+      "description": "The labeled row of quick city searches below the main field.",
+      "html": "<nav class=\"ds-city-suggestions\" aria-label=\"Suggested cities\"><span>TRY</span><button type=\"button\">New York</button><button type=\"button\">London</button><button type=\"button\">Tokyo</button><button type=\"button\">Sydney</button></nav>",
+      "css": ".ds-city-suggestions{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:9px;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif}.ds-city-suggestions>span{margin-right:3px;color:#b7c8d8;font:10px \"Azeret Mono\",ui-monospace,monospace;letter-spacing:.04em}.ds-city-suggestions button{min-height:29px;padding:4px 11px;border:1px solid rgb(207 226 242 / 20%);border-radius:7px;color:#f2f7fc;background:transparent;cursor:pointer;font:12px ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif;transition:color 160ms ease,border-color 160ms ease,background-color 160ms ease}.ds-city-suggestions button:hover{border-color:#c6d3ed;color:#c6d3ed;background:rgb(255 255 255 / 4%)}.ds-city-suggestions button:focus-visible{outline:3px solid #f4cd7a;outline-offset:3px}"
+    },
+    {
+      "name": "Current Weather Hero",
+      "kind": "card",
+      "description": "The current city and measured conditions beside the abstract orbital atlas; shown in a cloud/mild state.",
+      "html": "<section class=\"ds-weather-hero\" aria-label=\"Current weather in New York\"><div class=\"ds-weather-hero__header\"><span>CURRENT CONDITIONS</span><time>Saturday, November 21</time></div><div class=\"ds-weather-hero__body\"><div class=\"ds-atlas\" aria-hidden=\"true\"><i class=\"ds-atlas__outer\"></i><i class=\"ds-atlas__inner\"></i><i class=\"ds-atlas__marker ds-atlas__marker--one\"></i><i class=\"ds-atlas__marker ds-atlas__marker--two\"></i><span>18<small>°C</small></span><small class=\"ds-atlas__live\">LIVE</small></div><div class=\"ds-weather-summary\"><h2>New York</h2><p>New York, United States</p><strong>18</strong><span>°C</span><p>Overcast</p></div></div><div class=\"ds-weather-hero__footer\"><span>Live weather</span><span>Updated at 14:15</span></div></section>",
+      "css": ".ds-weather-hero{--condition-color:#c6d3ed;--condition-wash:#294e79;--thermal-color:#f4cd7a;--thermal-wash:#674a16;--scene-deep:#071629;--copy-main:#f2f7fc;--copy-muted:#b7c8d8;--line-color:rgb(207 226 242 / 20%);overflow:hidden;padding:18px 28px 0;border:1px solid var(--line-color);border-radius:16px;color:var(--copy-main);background:radial-gradient(ellipse 46% 92% at 84% 47%,var(--condition-wash),transparent 80%),radial-gradient(ellipse 32% 76% at 7% 86%,var(--thermal-wash),transparent 84%),linear-gradient(116deg,rgb(5 15 28 / 88%),rgb(10 29 49 / 90%));font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif}.ds-weather-hero__header,.ds-weather-hero__footer{display:flex;align-items:center;justify-content:space-between;color:var(--copy-muted);font:10px \"Azeret Mono\",ui-monospace,monospace;letter-spacing:.035em}.ds-weather-hero__body{display:grid;min-height:218px;grid-template-columns:250px minmax(0,1fr);align-items:center;gap:24px;padding:8px 0 12px}.ds-atlas{position:relative;display:grid;width:208px;aspect-ratio:1;place-items:center;order:1;color:var(--condition-color)}.ds-atlas__outer,.ds-atlas__inner{position:absolute;border:1px solid rgb(221 238 250 / 34%);border-radius:50%}.ds-atlas__outer{width:192px;height:118px;transform:rotate(-31deg);animation:ds-orbit-sweep 34s linear infinite}.ds-atlas__inner{width:136px;height:136px;border-color:color-mix(in srgb,var(--condition-color) 58%,transparent)}.ds-atlas__marker{position:absolute;width:8px;height:8px;border:1px solid var(--scene-deep);border-radius:50%;background:var(--thermal-color)}.ds-atlas__marker--one{top:45px;right:37px}.ds-atlas__marker--two{bottom:38px;left:39px;width:5px;height:5px;background:var(--condition-color)}.ds-atlas>span{z-index:1;color:var(--thermal-color);font:29px \"Azeret Mono\",ui-monospace,monospace}.ds-atlas>span small{font-size:10px}.ds-atlas__live{position:absolute;z-index:1;margin-top:49px;color:var(--copy-muted);font:8px \"Azeret Mono\",ui-monospace,monospace;letter-spacing:.08em}.ds-weather-summary{order:2}.ds-weather-summary h2{margin:0;color:var(--copy-main);font:italic 520 clamp(1.75rem,3.4vw,2.55rem)/1.12 \"Bodoni Moda\",serif}.ds-weather-summary p{color:var(--copy-muted);font-size:12px}.ds-weather-summary strong{color:var(--thermal-color);font:300 clamp(4rem,7.4vw,6rem)/.94 \"Azeret Mono\",monospace;letter-spacing:-.075em}.ds-weather-summary>span{margin-left:8px;color:var(--copy-muted);font-size:20px}@keyframes ds-orbit-sweep{to{transform:rotate(329deg)}}@media(max-width:680px){.ds-weather-hero{padding:18px 18px 0;border-radius:14px}.ds-weather-hero__body{min-height:220px;grid-template-columns:minmax(0,1fr) 82px;gap:5px;padding:21px 0}.ds-atlas{width:90px;order:2}.ds-atlas__outer{width:90px;height:56px}.ds-atlas__inner{width:66px;height:66px}.ds-atlas__marker--one{top:13px;right:5px}.ds-atlas__marker--two{bottom:10px;left:6px}.ds-weather-summary{order:1}}@media(prefers-reduced-motion:reduce){.ds-atlas__outer{animation-duration:.01ms;animation-iteration-count:1}}"
+    },
+    {
+      "name": "Weather Metrics Grid",
+      "kind": "custom",
+      "description": "Four ruled current-condition readings that become a two-by-two grid on mobile.",
+      "html": "<div class=\"ds-weather-metrics\"><article><p>FEELS LIKE</p><strong>15<span>°C</span></strong><small>What it feels like</small></article><article><p>HUMIDITY</p><strong>39<span>%</span></strong><small>Relative humidity</small></article><article><p>WIND</p><strong>12<span>km/h</span></strong><small>Current wind speed</small></article><article><p>PRECIPITATION</p><strong>0<span>mm</span></strong><small>Current amount</small></article></div>",
+      "css": ".ds-weather-metrics{--copy-main:#f2f7fc;--copy-muted:#b7c8d8;--thermal-color:#f4cd7a;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid rgb(207 226 242 / 20%);border-bottom:1px solid rgb(207 226 242 / 20%);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif}.ds-weather-metrics article{min-width:0;padding:12px 18px 13px;border-right:1px solid rgb(207 226 242 / 20%)}.ds-weather-metrics article:first-child{padding-left:0}.ds-weather-metrics article:last-child{padding-right:0;border-right:0}.ds-weather-metrics p,.ds-weather-metrics small{margin:0;color:var(--copy-muted)}.ds-weather-metrics p{font:10px \"Azeret Mono\",ui-monospace,monospace}.ds-weather-metrics strong{display:block;margin-top:6px;color:var(--copy-main);font:23px/1.25 \"Azeret Mono\",ui-monospace,monospace;font-variant-numeric:tabular-nums}.ds-weather-metrics strong span{margin-left:5px;color:var(--thermal-color);font-size:12px}.ds-weather-metrics small{display:block;margin-top:3px;font-size:11px}@media(max-width:680px){.ds-weather-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.ds-weather-metrics article,.ds-weather-metrics article:first-child,.ds-weather-metrics article:last-child{padding:13px 11px 14px;border-right:1px solid rgb(207 226 242 / 20%)}.ds-weather-metrics article:nth-child(2n){border-right:0}.ds-weather-metrics article:nth-child(n+3){border-top:1px solid rgb(207 226 242 / 20%)}}"
+    },
+    {
+      "name": "Search Error",
+      "kind": "custom",
+      "description": "Inline recovery copy beneath the city field.",
+      "html": "<p class=\"ds-search-error\" role=\"alert\">City not found. Check the name and try again.</p>",
+      "css": ".ds-search-error{margin:10px 0 0;color:#ffc0b8;font:13px ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif}"
+    },
+    {
+      "name": "Empty and Loading Panel",
+      "kind": "card",
+      "description": "The same restrained panel introduces search or reports that current conditions are loading.",
+      "html": "<section class=\"ds-empty-weather\" aria-live=\"polite\"><div class=\"ds-empty-weather__diagram\" aria-hidden=\"true\"><i></i><i></i></div><div><h2>Your city's weather,<br/>just a search away.</h2><p>Search for a place above to see its current conditions.</p></div></section>",
+      "css": ".ds-empty-weather{--copy-main:#f2f7fc;--copy-muted:#b7c8d8;--condition-color:#c6d3ed;--thermal-color:#f4cd7a;display:grid;min-height:236px;grid-template-columns:200px minmax(0,1fr);align-items:center;gap:26px;padding:24px 32px;border:1px solid rgb(207 226 242 / 20%);border-radius:16px;color:var(--copy-main);background:linear-gradient(120deg,rgb(5 16 30 / 75%),rgb(11 28 47 / 68%));font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif}.ds-empty-weather__diagram{position:relative;display:grid;min-height:150px;place-items:center;color:var(--condition-color)}.ds-empty-weather__diagram i{position:absolute;width:132px;height:132px;border:1px solid rgb(207 226 242 / 20%);border-radius:50%}.ds-empty-weather__diagram i+ i{width:92px;height:92px;border-color:color-mix(in srgb,var(--condition-color) 52%,transparent)}.ds-empty-weather h2{margin:0;color:var(--copy-main);font:italic 520 clamp(1.5rem,3vw,2.2rem)/1.18 \"Bodoni Moda\",serif}.ds-empty-weather p{max-width:50ch;margin:11px 0 0;color:var(--copy-muted);font-size:13px;line-height:1.6}@media(max-width:680px){.ds-empty-weather{min-height:205px;grid-template-columns:88px minmax(0,1fr);gap:15px;padding:20px 16px}.ds-empty-weather__diagram{min-height:100px}.ds-empty-weather__diagram i{width:90px;height:90px}.ds-empty-weather__diagram i+ i{width:64px;height:64px}.ds-empty-weather h2{font-size:21px}.ds-empty-weather p{font-size:11px}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Atlas de Órbita",
+    "overview": "The dashboard is a condition-led celestial observation interface: a vivid, climate-responsive instrument set against chart navy. Weather condition is the leading signal; temperature modulates warmth, while day or night sets scene luminance. Chalk text, restrained rules, and precise orbital geometry keep attention on measured conditions rather than decorative spectacle.\n\nThe display pairing puts locally bundled Bodoni Moda italic on the dashboard heading and city name, locally bundled Azeret Mono on measured data, and native system UI on controls and supporting copy. The orbit illustration is abstract visual language, not a plot of astronomical or geographic data. The standard dashboard retains search, suggestions, service status, current conditions, detail metrics, loading and error states, and attribution; its interface copy remains English.",
+    "keyCharacteristics": [
+      "Weather condition leads; temperature provides warm/cool modulation; day/night controls scene luminance.",
+      "Bodoni Moda italic frames the heading and city; Azeret Mono marks measured data.",
+      "Fine orbital geometry sits on a layered navy field without implying astronomical data.",
+      "A standard responsive dashboard keeps search, status, conditions, details, and attribution in view."
+    ],
+    "rules": [
+      { "name": "The Condition-First Rule", "body": "Weather condition leads the visual signal; temperature supplies warm/cool modulation, and day/night controls scene luminance.", "section": "colors" },
+      { "name": "The Abstract Atlas Rule", "body": "Orbital geometry is an abstract observation mark, never a plot of astronomical data.", "section": "components" }
+    ],
+    "dos": [
+      "Do keep condition as the leading visual signal, temperature as warm/cool modulation, and day/night as the scene-luminance control.",
+      "Do use Bodoni Moda italic for the heading and city name, Azeret Mono for measured values, and native system UI for controls.",
+      "Do keep condition meaning explicit in text and weather iconography; color is an accent, not the only signal.",
+      "Do preserve the orbit as abstract geometry and keep search, status, details, and attribution in the standard dashboard flow."
+    ],
+    "donts": [
+      "Don't imply astronomical, orbital, or geographic data in the abstract atlas illustration.",
+      "Don't let a vivid background wash compete with readable chalk text or measured values.",
+      "Don't add box shadows to create depth; the implemented system uses tonal layering and fine borders."
+    ]
+  }
+}
