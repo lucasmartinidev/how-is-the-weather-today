@@ -1,5 +1,6 @@
 import { type FormEvent } from 'react';
 import { LoaderCircle, MapPin, Search } from 'lucide-react';
+import { CitySearchError } from './CitySearchError';
 import { CitySuggestions } from './CitySuggestions';
 
 type CitySearchProps = {
@@ -26,7 +27,7 @@ export function CitySearch({ city, error, isLoading, onCityChange, onSearch }: C
           <span>{isLoading ? 'Searching' : 'Search weather'}</span>
         </button>
       </form>
-      {error && <p id="city-search-error" className="city-search__error" role="alert">{error}</p>}
+      {error && <CitySearchError message={error} />}
       <CitySuggestions onSelect={(suggestedCity) => void onSearch(suggestedCity)} />
     </section>
   );

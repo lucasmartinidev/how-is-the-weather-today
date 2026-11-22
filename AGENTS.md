@@ -8,7 +8,7 @@ See [`.agents/rules/javascript-typescript.md`](.agents/rules/javascript-typescri
 
 For Node.js-specific rules on asynchronous code, the event loop, environment variables, shutdown, logging, lock files, and module dependencies, see [`.agents/rules/node.md`](.agents/rules/node.md).
 
-For React-specific rules on components, hooks, accessibility, and styling, see [`.agents/rules/react.md`](.agents/rules/react.md).
+For React-specific rules on components, hooks, accessibility, and styling, see the [`react`](.agents/skills/react/SKILL.md) skill.
 
 ## Testing Rules
 
@@ -28,6 +28,10 @@ See [`.agents/rules/folder-structure.md`](.agents/rules/folder-structure.md) for
 - Development URL: `http://localhost:5173` (Vite's default port; Vite arguments can override it).
 - Backend endpoints: `/health` and `/api/weather?city=<city>`; the frontend accesses them through the same origin. Vite proxies these paths to the backend during development.
 - Set `VITE_API_URL` when the backend is hosted on a different origin outside the Vite development server.
+
+### Required Skill
+
+Before implementing, fixing, refactoring, or reviewing any frontend code, load the [`react`](.agents/skills/react/SKILL.md) skill (`$react`) and follow its rules and references. This applies to frontend components, hooks, backend integration, accessibility, styling, and tests.
 
 ## Backend
 

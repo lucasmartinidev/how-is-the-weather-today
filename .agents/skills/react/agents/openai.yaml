@@ -1,0 +1,4 @@
+interface:
+  display_name: "React"
+  short_description: "React patterns for this project's frontends"
+  default_prompt: "Use $react to implement or review React code following this project's standards."

@@ -13,3 +13,6 @@ Create an endpoint on the backend for the frontend to consume, and display the r
 
 # prommt with impeccable skill
 /impeccable I would like a futuristic design for my weather forecast application, featuring an eye-catching, innovative background and high-contrast colors that reflect the temperature and weather conditions specific to each city.
+
+# prommt with my react skill
+/react Add a new component to the frontend for the error message displayed when a city cannot be found, isolating it in a separate file.
